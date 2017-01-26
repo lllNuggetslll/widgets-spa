@@ -1,6 +1,6 @@
 import React from 'react'
 
-const widgetRow = (widgets, edit) => (
+const widgetRow = (widgets, getOneWidget) => (
   widgets.map(widget => (
     <tr key={widget.id}>
       <td className="text-center">{widget.id}</td>
@@ -9,6 +9,7 @@ const widgetRow = (widgets, edit) => (
       <td>{widget.price}</td>
       <td>{widget.melts ? 'yes' : 'no'}</td>
       <td>{widget.inventory}</td>
+      <td><button onClick={() => getOneWidget(widget.id)}>View</button></td>
     </tr>
   ))
 )

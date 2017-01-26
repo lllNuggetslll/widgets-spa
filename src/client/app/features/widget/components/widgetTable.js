@@ -3,7 +3,7 @@ import React from 'react'
 // Components
 import WidgetRows from './widgetTableRowDispenser'
 
-const widgetTable = (widgets, editor) => (
+const widgetTable = (widgets, getOneWidget) => (
   <div className="row">
     <div className="col-lg-12">
       <div className="widget">
@@ -19,10 +19,11 @@ const widgetTable = (widgets, editor) => (
                 <th>Price</th>
                 <th>Melts?</th>
                 <th>Inventory</th>
+                <th>Get Details</th>
               </tr>
             </thead>
             <tbody>
-              {WidgetRows(widgets, editor)}
+              {WidgetRows(widgets, getOneWidget)}
             </tbody>
           </table>
         </div>

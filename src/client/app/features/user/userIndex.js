@@ -34,7 +34,7 @@ class User extends Component {
                       <SearchBar search={getOneUser} />
                     </div>
                   </div>
-                  {UserTable(users)}
+                  {UserTable(users, getOneUser)}
                 </div>
               </div>
             </div>

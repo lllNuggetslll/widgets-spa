@@ -6,11 +6,13 @@ import Sidebar from '../shared/sidebar'
 import Header from '../shared/header'
 import WidgetTable from './components/widgetTable'
 import WidgetCreator from './components/widgetCreator'
+import SearchBar from '../shared/searchBar'
 
 // Action Creators
 import { getWidgets,
          makeWidget,
          updateWidget,
+         getOneWidget,
        } from '../../redux/Actions'
 
 class Widget extends Component {
@@ -19,7 +21,7 @@ class Widget extends Component {
   }
 
   render() {
-    const { widgets, makeWidget, updateWidget } = this.props
+    const { widgets, makeWidget, updateWidget, getOneWidget } = this.props
 
     return (
       <div id="page-wrapper" className="open">
@@ -30,7 +32,8 @@ class Widget extends Component {
             <WidgetCreator action={makeWidget} type={"Create"}/>
             <WidgetCreator action={updateWidget} type={"Update"}/>
             <hr/>
-            {WidgetTable(widgets)}
+            <SearchBar search={getOneWidget} />
+            {WidgetTable(widgets, getOneWidget)}
           </div>
         </div>
       </div>
@@ -48,4 +51,5 @@ export default connect(mapStateToProps,{
   getWidgets,
   makeWidget,
   updateWidget,
+  getOneWidget,
 })(Widget)

@@ -3,7 +3,7 @@ import React from 'react'
 // Components
 import userRows from './userRowDispenser'
 
-const userTable = (users) => (
+const userTable = (users, getOneUser) => (
   <div className="table-responsive">
     <table className="table">
       <thead>
@@ -11,10 +11,11 @@ const userTable = (users) => (
           <th className="text-center">ID</th>
           <th>Name</th>
           <th>Avatar</th>
+          <th>View Details</th>
         </tr>
       </thead>
       <tbody>
-        {userRows(users)}
+        {userRows(users, getOneUser)}
       </tbody>
     </table>
   </div>
