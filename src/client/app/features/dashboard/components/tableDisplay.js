@@ -18,10 +18,11 @@ const tableDisplay = (name, data, search) => (
             <tr>
               <th className="text-center">ID</th>
               <th>Name</th>
+              <th>Details</th>
             </tr>
           </thead>
           <tbody>
-            {rowDispenser(data)}
+            {rowDispenser(data, search)}
           </tbody>
         </table>
       </div>
